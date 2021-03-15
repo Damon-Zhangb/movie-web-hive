@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--配置数据库连接信息-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/youtube"
+                        userId="root"
+                        password="zhangbu">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!--指定javabean生成的位置-->
+        <javaModelGenerator targetPackage="cn.bro.domain" targetProject="/Users/sc/IdeaProjects/Bro/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--指定sql文件映射生成的位置-->
+        <sqlMapGenerator targetPackage="cn.bro.dao" targetProject="/Users/sc/IdeaProjects/Bro/src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!--指定dao接口生成的位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.bro.dao"
+                             targetProject="/Users/sc/IdeaProjects/Bro/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--指定每个表的生成策略-->
+        <!--        <table tableName="alarm_record" domainObjectName="AlarmRecord"/>-->
+        <!--        <table tableName="building" domainObjectName="Building"/>-->
+        <!--        <table tableName="company" domainObjectName="Company"/>-->
+        <!--        <table tableName="consumption_regulations" domainObjectName="FireRegulations"/>-->
+        <!--        <table tableName="fire_equipment" domainObjectName="FireEquipment"/>-->
+        <!--        <table tableName="fire_facilities" domainObjectName="FireFacilities"/>-->
+        <!--        <table tableName="fire_fighting_parts" domainObjectName="FireParts"/>-->
+        <!--        <table tableName="function_menu" domainObjectName="FunctionMenu"/>-->
+        <!--        <table tableName="notice" domainObjectName="Notice"/>-->
+        <!--        <table tableName="operation_log" domainObjectName="OperationLog"/>-->
+        <!--        <table tableName="person" domainObjectName="Person"/>-->
+        <!--        <table tableName="protocol" domainObjectName="Protocol"/>-->
+        <!--        <table tableName="role" domainObjectName="Role"/>-->
+        <!--        <table tableName="user" domainObjectName="User"/>-->
+        <!--        <table tableName="role_privilege" domainObjectName="RolePrivilege"-->
+        <!--               enableCountByExample="false"-->
+        <!--               enableUpdateByExample="false"-->
+        <!--               enableDeleteByExample="false"-->
+        <!--               enableSelectByExample="false"-->
+        <!--               selectByExampleQueryId="false">-->
+        <!--        </table>-->
+        <!--        <table tableName="user_role" domainObjectName="UserRole"-->
+        <!--               enableCountByExample="false"-->
+        <!--               enableUpdateByExample="false"-->
+        <!--               enableDeleteByExample="false"-->
+        <!--               enableSelectByExample="false"-->
+        <!--               selectByExampleQueryId="false">-->
+        <!--        </table>-->
+        <table tableName="movie" domainObjectName="Movie"/>
+
+    </context>
+</generatorConfiguration>
